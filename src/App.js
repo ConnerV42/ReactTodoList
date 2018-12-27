@@ -33,21 +33,23 @@ class App extends Component {
     return (
       <div className="App">
         <form onSubmit={this.handleSubmit}>
-          <p>Todo List</p>
+          <h1>Simple Todo App</h1>
           <input
+            className="todo-input"
             autoComplete="off"
             type="text"
             name="newTodo"
             value={newTodo}
             onChange={(e) => this.setState({ [e.target.name]: e.target.value })}
           />
-          <button type="submit">Add Todo</button>
+          <button className="save-button" type="submit">Add</button>
         </form>
-
-        <ul>
-          {todos}
-        </ul>
-      </div>
+        <div className="todo-content">
+          <ol>
+            {todos}
+          </ol>
+        </div>
+      </div >
     );
   }
 }
